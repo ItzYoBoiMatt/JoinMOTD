@@ -45,6 +45,7 @@ class Main extends PluginBase implements Listener{ //Class name needs to be same
                 $this->getLogger()->info(TextFormat::DARKRED . "Join MOTD has Been Loaded!!!");
         }
         public function onEnable(){
+                @mkdir($this->getDataFolder());
                 $this->getServer()->getPluginManager()->registerEvents($this, $this);
                 $this->getLogger()->info(TextFormat::DARKRED . "Join MOTD has been Enabled!");
                 $this->saveDefaultConfig(); //Saves the config if you need one.
